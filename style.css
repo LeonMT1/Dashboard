@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-color: #333;
+}
+
+#Berlin_z704 {
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    z-index: 10;
+    transition: color 0.3s, text-shadow 0.3s, font-size 0.3s, top 0.3s;
+}
+
+#webgl-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.window {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    resize: both;
+    overflow: auto;
+    width: 200px;
+    height: 150px;
+    transition: box-shadow 0.3s;
+}
+
+.title-bar {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    cursor: move;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: none;
+}
+
+.window.active .title-bar {
+    display: block;
+}
+
+.window:focus-within {
+    z-index: 10;
+}
+
+#spotify-widget {
+    position: fixed;
+    top: -14%;
+    right: -1%;
+    background: none;
+}
+
+#settings-menu {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    font-size: 14px;
+}
+
+#settings-menu h3, #settings-menu h4 {
+    margin: 8px 0;
+    font-size: 16px;
+}
+
+#settings-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#settings-content {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform-origin: top right;
+    transform: scaleY(0);
+    opacity: 0;
+    height: auto;
+}
+
+#settings-content.open {
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+#settings-content label, #settings-content input {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#settings-content button {
+    display: block;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
